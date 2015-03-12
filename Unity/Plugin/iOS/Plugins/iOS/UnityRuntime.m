@@ -58,7 +58,9 @@ void setIntTag(char * tagName, int tagValue)
 	NSDictionary * dict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:tagValue], tagNameStr, nil];
 	[[PushNotificationManager pushManager] setTags:dict];
 	
+#if !__has_feature(objc_arc)
 	[tagNameStr release];
+#endif
 }
 
 void setStringTag(char * tagName, char * tagValue)
@@ -68,9 +70,11 @@ void setStringTag(char * tagName, char * tagValue)
 	
 	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:tagValueStr, tagNameStr, nil];
 	[[PushNotificationManager pushManager] setTags:dict];
-	
+    
+#if !__has_feature(objc_arc)
 	[tagNameStr release];
 	[tagValueStr release];
+#endif
 }
 
 void internalSendStringTags (char * tagName, char** tags) {
@@ -87,15 +91,17 @@ void internalSendStringTags (char * tagName, char** tags) {
         if (tagValueStr) {
             [tagsArray addObject:tagValueStr];
         }
-        
+#if !__has_feature(objc_arc)
         [tagValueStr release];
+#endif
     }
     
     if (tagsArray.count) {
         [[PushNotificationManager pushManager] setTags:@{tagNameStr : tagsArray}];
     }
-    
+#if !__has_feature(objc_arc)
     [tagNameStr release];
+#endif
 }
 
 void startLocationTracking()
@@ -119,7 +125,7 @@ void stopLocationTracking()
 	return (NSObject<PushNotificationDelegate> *)[UIApplication sharedApplication];
 }
 
-- (NSObject<PushNotificationDelegate> *)pushwooshUseRuntimeMagic {
+- (BOOL) pushwooshUseRuntimeMagic {
 	return YES;
 }
 
@@ -155,8 +161,10 @@ void stopLocationTracking()
 - (void) onPushAccepted:(PushNotificationManager *)pushManager withNotification:(NSDictionary *)pushNotification onStart:(BOOL)onStart
 {
 	NSData *jsonData = [NSJSONSerialization dataWithJSONObject:pushNotification options:0 error:nil];
-    NSString *jsonRequestData = [[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding] autorelease];
-	
+    NSString *jsonRequestData = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+#if !__has_feature(objc_arc)
+    [jsonData autorelease];
+#endif
 	const char * str = [jsonRequestData UTF8String];
 	
 	if(!g_listenerName) {
