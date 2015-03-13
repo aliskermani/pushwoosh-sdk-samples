@@ -7,14 +7,14 @@
         <excludedEntries>
           <libraryPathEntry kind="1" linkType="1" path="${PROJECT_FRAMEWORKS}/locale/{locale}"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/advancedgrids.swc" useDefaultLinkType="false"/>
-          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_air.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/charts.swc" useDefaultLinkType="false"/>
+          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_air.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/netmon.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/spark.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/sparkskins.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/rpc.swc" useDefaultLinkType="false"/>
-          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/qtp_air.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/videoPlayer.swc" useDefaultLinkType="false"/>
+          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/qtp_air.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/flash-integration.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/authoringsupport.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/qtp.swc" useDefaultLinkType="false"/>
@@ -34,7 +34,7 @@
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_agent.swc" useDefaultLinkType="false"/>
         </excludedEntries>
       </libraryPathEntry>
-      <libraryPathEntry kind="5" linkType="2" path="/Users/Max/Desktop/Projects/Pushwoosh/Sources/SDKSamples/AdobeAir/ANE-Pushwoosh/bin/PushNotification.ane"/>
+      <libraryPathEntry kind="5" linkType="2" path="/Users/Max/Desktop/Projects/Pushwoosh/Sources/SDKSamples/Adobe-Air/ANE-Pushwoosh/PushNotification.ane"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>
@@ -47,12 +47,12 @@
   <buildCSSFiles/>
   <flashCatalyst validateFlashCatalystCompatibility="false"/>
   <buildTargets>
-    <buildTarget buildTargetName="com.adobe.flexide.multiplatform.ios.platform" iosSettingsVersion="1" provisioningFile="../../certs/embedded.mobileprovision" releasePackageType="ipa-app-store">
-      <multiPlatformSettings enabled="true" includePlatformLibs="false" nativeSDKPathString="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk" platformID="com.adobe.flexide.multiplatform.ios.platform" version="2"/>
-      <airSettings airCertificatePath="../../certs/max_arello_mobile_com_distribution.p12" airTimestamp="true" anePathSet="true" version="1">
+    <buildTarget buildTargetName="com.adobe.flexide.multiplatform.ios.platform" iosSettingsVersion="1" provisioningFile="../certs/embedded.mobileprovision" releasePackageType="ipa-app-store">
+      <multiPlatformSettings enabled="true" includePlatformLibs="false" nativeSDKPathString="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.0.sdk" platformID="com.adobe.flexide.multiplatform.ios.platform" version="2"/>
+      <airSettings airCertificatePath="../certs/max_arello_mobile_com_distribution.p12" airTimestamp="true" anePathSet="true" version="1">
         <airExcludes/>
         <anePaths>
-          <anePathEntry path="/Users/Max/Desktop/Projects/Pushwoosh/Sources/SDKSamples/AdobeAir/ANE-Pushwoosh/bin/PushNotification.ane"/>
+          <anePathEntry path="/Users/Max/Desktop/Projects/Pushwoosh/Sources/SDKSamples/Adobe-Air/ANE-Pushwoosh/PushNotification.ane"/>
         </anePaths>
       </airSettings>
       <actionScriptSettings version="1"/>
@@ -65,12 +65,12 @@
       </airSettings>
       <actionScriptSettings version="1"/>
     </buildTarget>
-    <buildTarget airDownloadURL="Android Market - https://market.android.com/details?id=com.adobe.air" androidSettingsVersion="1" buildTargetName="com.adobe.flexide.multiplatform.android.platform">
+    <buildTarget airDownloadURL="https://market.android.com/details?id=com.adobe.air" androidSettingsVersion="1" buildTargetName="com.adobe.flexide.multiplatform.android.platform">
       <multiPlatformSettings enabled="true" includePlatformLibs="false" platformID="com.adobe.flexide.multiplatform.android.platform" version="2"/>
-      <airSettings airCertificatePath="../../certs/android.p12" airTimestamp="true" anePathSet="true" version="1">
+      <airSettings airCertificatePath="../certs/android.p12" airTimestamp="true" anePathSet="true" version="1">
         <airExcludes/>
         <anePaths>
-          <anePathEntry path="/Users/Max/Desktop/Projects/Pushwoosh/Sources/SDKSamples/AdobeAir/ANE-Pushwoosh/bin/PushNotification.ane"/>
+          <anePathEntry path="/Users/Max/Desktop/Projects/Pushwoosh/Sources/SDKSamples/Adobe-Air/ANE-Pushwoosh/PushNotification.ane"/>
         </anePaths>
       </airSettings>
       <actionScriptSettings version="1"/>
