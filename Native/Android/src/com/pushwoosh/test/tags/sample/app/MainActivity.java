@@ -1,5 +1,7 @@
 package com.pushwoosh.test.tags.sample.app;
 
+import java.util.Map;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -17,12 +19,11 @@ import android.widget.TextView;
 import com.arellomobile.android.push.BasePushMessageReceiver;
 import com.arellomobile.android.push.PushManager;
 import com.arellomobile.android.push.PushManager.GetTagsListener;
+import com.arellomobile.android.push.PushManager.RichPageListener;
 import com.arellomobile.android.push.utils.RegisterBroadcastReceiver;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.Map;
 
 public class MainActivity extends FragmentActivity implements SendTagsCallBack
 {
@@ -69,6 +70,17 @@ public class MainActivity extends FragmentActivity implements SendTagsCallBack
 		registerReceivers();
 
 		final PushManager pushManager = PushManager.getInstance(this);
+		
+		class RichPageListenerImpl implements RichPageListener
+		{
+			@Override
+			public void onRichPageAction(String actionParams)
+			{
+				Log.e("Pushwoosh", "Rich page action: " + actionParams);
+			}
+		}
+
+		pushManager.setRichPageListener(new RichPageListenerImpl());
 
 		//Start push manager, this will count app open for Pushwoosh stats as well
 		try
@@ -270,7 +282,7 @@ public class MainActivity extends FragmentActivity implements SendTagsCallBack
 			}
 			else if (intent.hasExtra(PushManager.UNREGISTER_EVENT))
 			{
-				doOnUnregisteredError(intent.getExtras().getString(PushManager.UNREGISTER_EVENT));
+				doOnUnregistered(intent.getExtras().getString(PushManager.UNREGISTER_EVENT));
 			}
 			else if (intent.hasExtra(PushManager.REGISTER_ERROR_EVENT))
 			{
@@ -278,7 +290,7 @@ public class MainActivity extends FragmentActivity implements SendTagsCallBack
 			}
 			else if (intent.hasExtra(PushManager.UNREGISTER_ERROR_EVENT))
 			{
-				doOnUnregistered(intent.getExtras().getString(PushManager.UNREGISTER_ERROR_EVENT));
+				doOnUnregisteredError(intent.getExtras().getString(PushManager.UNREGISTER_ERROR_EVENT));
 			}
 
 			resetIntentValues();
