@@ -1,7 +1,8 @@
 ####Pushwoosh Cordova/Phonegap Push Notifications Plugin:
 https://github.com/shaders/pushwoosh-phonegap-3.0-plugin
 
-####Check out this sample app with Pushwoosh plugin integrated (ready to work with Phonegap Build):
+####Sample:
+Check out this sample app with Pushwoosh plugin integrated (ready to work with Phonegap Build)
 https://github.com/Pushwoosh/phonegap-3-sample-app
 
 ####Android Guide:
