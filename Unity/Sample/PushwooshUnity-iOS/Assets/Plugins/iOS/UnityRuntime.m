@@ -162,9 +162,7 @@ void stopLocationTracking()
 {
 	NSData *jsonData = [NSJSONSerialization dataWithJSONObject:pushNotification options:0 error:nil];
     NSString *jsonRequestData = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-#if !__has_feature(objc_arc)
-    [jsonData autorelease];
-#endif
+
 	const char * str = [jsonRequestData UTF8String];
 	
 	if(!g_listenerName) {
