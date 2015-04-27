@@ -117,6 +117,8 @@ s3eResult s3ePushWooshScheduleLocalNotification(const char * message, int second
  */
 s3eResult s3ePushWooshSetAndroidNotificationMultiMode(bool enable);
 
+// \cond HIDDEN_DEFINES
 S3E_END_C_DECL
+// \endcond
 
 #endif /* !S3E_EXT_PUSHWOOSH_H */
