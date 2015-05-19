@@ -12,21 +12,22 @@ var label = Ti.UI.createLabel();
 win.add(label);
 win.open();
 
-var pushnotifications = require('com.arellomobile.push');
+var pushnotifications = require('com.pushwoosh.module');
 Ti.API.info("module is => " + pushnotifications);
 	
-pushnotifications.pushNotificationsRegister("", "A0443-C41F6", {
-	//NOTE: all the functions fire on the background thread, do not use any UI or Alerts here
-	success:function(e)
-	{
-		Ti.API.info('JS registration success event: ' + e.registrationId);
-	},
-	error:function(e)
-	{
-		Ti.API.error("Error during registration: "+e.error);
-	},
-	callback:function(e) // called when a push notification is received
-	{
-		Ti.API.info('JS message event: ' + JSON.stringify(e.data));
-	}
+pushnotifications.pushNotificationsRegister({
+  "pw_appid": "XXXXX-XXXXX",
+  success:function(e)
+  {
+      Ti.API.info('JS registration success event: ' + e.registrationId);
+  },
+  error:function(e)
+  {
+      Ti.API.error("Error during registration: "+e.error);
+  },
+  callback:function(e) // called when a push notification is received
+  {
+      Ti.API.info('JS message event: ' + JSON.stringify(e.data));
+      alert('JS message event: ' + JSON.stringify(e.data));
+  }
 });
