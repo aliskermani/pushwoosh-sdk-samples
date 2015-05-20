@@ -6,34 +6,28 @@
 
 // open a single window
 var win = Ti.UI.createWindow({
-	backgroundColor:'white'
+    backgroundColor:'white'
 });
 var label = Ti.UI.createLabel();
 win.add(label);
 win.open();
 
-// TODO: write your module tests here
-var pushwooshmodule = require('com.pushwoosh.module');
-Ti.API.info("module is => " + pushwooshmodule);
-
-label.text = pushwooshmodule.example();
-
-Ti.API.info("module exampleProp is => " + pushwooshmodule.exampleProp);
-pushwooshmodule.exampleProp = "This is a test value";
-
-if (Ti.Platform.name == "android") {
-	var proxy = pushwooshmodule.createExample({
-		message: "Creating an example Proxy",
-		backgroundColor: "red",
-		width: 100,
-		height: 100,
-		top: 100,
-		left: 150
-	});
-
-	proxy.printMessage("Hello world!");
-	proxy.message = "Hi world!.  It's me again.";
-	proxy.printMessage("Hello world!");
-	win.add(proxy);
-}
-
+var pushnotifications = require('com.pushwoosh.module');
+Ti.API.info("module is => " + pushnotifications);
+     
+pushnotifications.pushNotificationsRegister({
+    "pw_appid": "ENTER_PUSHWOOSH_APPID_HERE",
+    "gcm_projectid": "ENTER_GOOGLE_PROJECTID_HERE", //not required for iOS
+    success:function(e)
+    {
+        Ti.API.info('JS registration success event: ' + e.registrationId);
+    },
+    error:function(e)
+    {
+        Ti.API.error("Error during registration: "+e.error);
+    },
+    callback:function(e) // called when a push notification is received
+    {
+        Ti.API.info('JS message event: ' + JSON.stringify(e.data));
+    }
+});
