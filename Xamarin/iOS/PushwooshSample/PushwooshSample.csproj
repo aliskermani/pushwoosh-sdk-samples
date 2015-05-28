@@ -53,6 +53,7 @@
     <IpaPackageName>
     </IpaPackageName>
     <MtouchProfiling>true</MtouchProfiling>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>

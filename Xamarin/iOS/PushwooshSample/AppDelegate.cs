@@ -44,6 +44,8 @@ namespace PushwooshSample
 
 			pushmanager.StartLocationTracking ();
 
+			Console.WriteLine("HWID: " + pushmanager.GetHWID);
+
 			return true;
 		}
 

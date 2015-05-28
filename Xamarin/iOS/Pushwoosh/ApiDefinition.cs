@@ -151,6 +151,9 @@ namespace Pushwoosh
 		[Export ("getPushToken")]
 		string GetPushToken { get; }
 
+		[Export ("getHWID")]
+		string GetHWID { get; }
+
 		[Export ("handlePushRegistration:")]
 		void HandlePushRegistration (NSData devToken);
 
