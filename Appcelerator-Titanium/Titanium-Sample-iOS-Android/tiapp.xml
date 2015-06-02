@@ -5,13 +5,13 @@
     <version>1.0</version>
     <publisher>not specified</publisher>
     <url>http://www.pushwoosh.com</url>
-    <description/>
+    <description>undefined</description>
     <copyright>not specified</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>9b4517c4-4353-4b72-b89a-6d72cd5ad941</guid>
+    <guid>ef632961-d903-4b48-9aaa-e495f9d7bf14</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>
@@ -48,8 +48,8 @@
         <theme>default</theme>
     </mobileweb>
     <modules>
-        <module platform="android">com.pushwoosh.module</module>
         <module platform="iphone">com.pushwoosh.module</module>
+        <module platform="android">com.pushwoosh.module</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>
@@ -62,4 +62,5 @@
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>
+    <property name="appc-app-id" type="string">556d82978e9e1eb769582153</property>
 </ti:app>
