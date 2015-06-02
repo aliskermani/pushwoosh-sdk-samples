@@ -6,7 +6,7 @@
 
 // open a single window
 var win = Ti.UI.createWindow({
-    backgroundColor:'white'
+	backgroundColor:'white'
 });
 var label = Ti.UI.createLabel();
 win.add(label);
@@ -17,7 +17,7 @@ Ti.API.info("module is => " + pushnotifications);
      
 pushnotifications.pushNotificationsRegister({
     "pw_appid": "ENTER_PUSHWOOSH_APPID_HERE",
-    "gcm_projectid": "ENTER_GOOGLE_PROJECTID_HERE", //not required for iOS
+    "gcm_projectid": "ENTER_GOOGLE_PROJECTID_HERE",	//not required for iOS
     success:function(e)
     {
         Ti.API.info('JS registration success event: ' + e.registrationId);
