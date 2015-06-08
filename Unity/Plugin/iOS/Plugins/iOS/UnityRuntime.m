@@ -119,6 +119,17 @@ void stopLocationTracking()
 	[[PushNotificationManager pushManager] stopLocationTracking];
 }
 
+void setBadgeNumber(int badge)
+{
+	[[UIApplication sharedApplication] setApplicationIconBadgeNumber:badge];
+}
+
+void addBadgeNumber(int deltaBadge)
+{
+	int badge = [UIApplication sharedApplication].applicationIconBadgeNumber + deltaBadge;
+	setBadgeNumber(badge);
+}
+
 @implementation UIApplication(InternalPushRuntime)
 
 - (NSObject<PushNotificationDelegate> *)getPushwooshDelegate {

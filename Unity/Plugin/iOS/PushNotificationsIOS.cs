@@ -46,6 +46,12 @@ public class PushNotificationsIOS : MonoBehaviour {
 	[System.Runtime.InteropServices.DllImport("__Internal")]
 	extern static public void clearNotificationCenter();
 
+	[System.Runtime.InteropServices.DllImport("__Internal")]
+	extern static public void setBadgeNumber(int badge);
+
+	[System.Runtime.InteropServices.DllImport("__Internal")]
+	extern static public void addBadgeNumber(int deltaBadge);
+
 	static public void setListTag(string tagName, List<object> tagValues)
 	{
 		List <string> stringTags = new List<string>();
@@ -78,6 +84,16 @@ public class PushNotificationsIOS : MonoBehaviour {
 	static public string getPushwooshHWID()
 	{
 		return Marshal.PtrToStringAnsi(_getPushwooshHWID());
+	}
+
+	static public void setBadge(int number)
+	{
+		setBadgeNumber (number);
+	}
+
+	static public void addBadge(int deltaBadge)
+	{
+		addBadgeNumber (deltaBadge);
 	}
 
 	void onRegisteredForPushNotifications(string token)
